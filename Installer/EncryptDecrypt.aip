@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="20.1.1" version="20.1.1" Modules="professional" RootPath="." Language="en" Id="{A9976F9B-4C20-4AE4-83BE-A46096010C62}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.1.1" version="20.1.1" Modules="professional" RootPath="." Language="en" Id="{ACCC1B80-9C3F-4366-A96F-CB9003566EB1}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;CPLAppletComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
@@ -13,13 +13,13 @@
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="lock.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
-    <ROW Property="Manufacturer" Value="EncryptDecrypt"/>
-    <ROW Property="ProductCode" Value="1033:{9A5EC85C-ADCB-4742-8D4D-CC85B08E8588} " Type="16"/>
+    <ROW Property="Manufacturer" Value="Encrypt Decrypt"/>
+    <ROW Property="ProductCode" Value="1033:{9704CFCF-E5BA-4416-9E5A-5D0CB20A786D} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="EncryptDecrypt"/>
     <ROW Property="ProductVersion" Value="1.0.0"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{7BE4FF24-6CBF-43FB-AAFA-A8B3EF5F4627}"/>
+    <ROW Property="UpgradeCode" Value="{4DD401F8-5267-448D-B288-18AF74AAFFCC}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
@@ -33,50 +33,51 @@
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="ApplicationFiles_Dir" Directory_Parent="APPDIR" DefaultDir="APPLIC~1|Application Files"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
-    <ROW Directory="EncryptDecrypt_1_0_0_6_Dir" Directory_Parent="ApplicationFiles_Dir" DefaultDir="ENCRYP~2|EncryptDecrypt_1_0_0_6"/>
+    <ROW Directory="EncryptDecrypt_1_0_0_6_Dir" Directory_Parent="ApplicationFiles_Dir" DefaultDir="ENCRYP~1|EncryptDecrypt_1_0_0_6"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_ExePath" ComponentId="{5734E0F3-6C9E-44F4-8D2B-AEDB67E0ABB5}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
-    <ROW Component="APPDIR" ComponentId="{C9C5D2DB-15A4-45CC-BA1F-BD50669EF89B}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="D3DCompiler_47_cor3.dll" ComponentId="{0ACEABCE-935C-4394-82E4-A7389C4C450F}" Directory_="APPDIR" Attributes="256" KeyPath="D3DCompiler_47_cor3.dll"/>
-    <ROW Component="D3DCompiler_47_cor3.dll.deploy_1" ComponentId="{298318F5-40E1-4F6C-BE67-BF308AABBE4A}" Directory_="EncryptDecrypt_1_0_0_6_Dir" Attributes="256" KeyPath="D3DCompiler_47_cor3.dll.deploy_1" Type="0"/>
-    <ROW Component="EncryptDecrypt.application" ComponentId="{682D3288-839F-4E8D-9F2F-4193ED7EABD4}" Directory_="APPDIR" Attributes="0" KeyPath="EncryptDecrypt.application" Type="0"/>
-    <ROW Component="EncryptDecrypt.exe" ComponentId="{87289155-F9F4-48B2-868D-20280860FDA1}" Directory_="APPDIR" Attributes="256" KeyPath="EncryptDecrypt.exe"/>
-    <ROW Component="Launcher.exe" ComponentId="{AE41CA86-5547-4A71-9FE8-9A0CC128BC7D}" Directory_="APPDIR" Attributes="0" KeyPath="Launcher.exe"/>
-    <ROW Component="PenImc_cor3.dll" ComponentId="{49581467-366B-47C9-8287-33408A0C4F11}" Directory_="APPDIR" Attributes="256" KeyPath="PenImc_cor3.dll"/>
-    <ROW Component="PresentationNative_cor3.dll" ComponentId="{C751CC36-70CB-42C8-9B59-B321983B35AA}" Directory_="APPDIR" Attributes="256" KeyPath="PresentationNative_cor3.dll"/>
-    <ROW Component="ProductInformation" ComponentId="{01E5F2B9-107E-4F8E-8C5F-00B3E7EBFBF1}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{9ADE18D7-F21D-4B47-BD53-229E209D816B}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="setup.exe" ComponentId="{162BCE06-B625-48AA-A797-36FAC48BF95A}" Directory_="APPDIR" Attributes="0" KeyPath="setup.exe"/>
-    <ROW Component="vcruntime140_cor3.dll" ComponentId="{EA5D6291-1E58-4C3D-8B0F-1D18E00F1580}" Directory_="APPDIR" Attributes="256" KeyPath="vcruntime140_cor3.dll"/>
-    <ROW Component="wpfgfx_cor3.dll" ComponentId="{8495DCBC-6832-4176-9642-375630F632F5}" Directory_="APPDIR" Attributes="256" KeyPath="wpfgfx_cor3.dll"/>
+    <ROW Component="AI_ExePath" ComponentId="{623D2E2D-6438-488C-829F-996B7A400AA5}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{F0FBFA99-8C65-430A-BC03-84C7C781E22D}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="D3DCompiler_47_cor3.dll" ComponentId="{CAFF266A-137B-446B-8437-DE8947E997DE}" Directory_="APPDIR" Attributes="256" KeyPath="D3DCompiler_47_cor3.dll"/>
+    <ROW Component="D3DCompiler_47_cor3.dll.deploy" ComponentId="{FD2BED56-FD80-4FF6-928F-64CA9F65D597}" Directory_="EncryptDecrypt_1_0_0_6_Dir" Attributes="256" KeyPath="D3DCompiler_47_cor3.dll.deploy" Type="0"/>
+    <ROW Component="EncryptDecrypt.application" ComponentId="{939A82C0-32F8-4A45-9BD7-FB338E354F87}" Directory_="APPDIR" Attributes="0" KeyPath="EncryptDecrypt.application" Type="0"/>
+    <ROW Component="EncryptDecrypt.exe" ComponentId="{76DE2D18-EAE4-4CED-9A05-65A573ED1373}" Directory_="APPDIR" Attributes="256" KeyPath="EncryptDecrypt.exe"/>
+    <ROW Component="Launcher.exe" ComponentId="{EAE65808-205C-466C-9354-0E4C3B798128}" Directory_="APPDIR" Attributes="0" KeyPath="Launcher.exe"/>
+    <ROW Component="PenImc_cor3.dll" ComponentId="{B638B852-B71C-49FF-8FF5-5A3F8400242C}" Directory_="APPDIR" Attributes="256" KeyPath="PenImc_cor3.dll"/>
+    <ROW Component="PresentationNative_cor3.dll" ComponentId="{81D68A56-0160-48B0-8CE0-69A733D10EFA}" Directory_="APPDIR" Attributes="256" KeyPath="PresentationNative_cor3.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{89BB76C9-0EC2-48BF-B626-2E7E3550E798}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{EA29F77E-B741-47DD-925A-9445CA8BA84E}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="setup.exe" ComponentId="{C9D83B1D-5882-463E-B860-FE738B2505E8}" Directory_="APPDIR" Attributes="0" KeyPath="setup.exe"/>
+    <ROW Component="vcruntime140_cor3.dll" ComponentId="{76A188A8-61A6-4E3E-AB9A-25A1B7FEC23D}" Directory_="APPDIR" Attributes="256" KeyPath="vcruntime140_cor3.dll"/>
+    <ROW Component="wpfgfx_cor3.dll" ComponentId="{4AEF6BCE-F902-4BF2-83AD-12977BAC5A06}" Directory_="APPDIR" Attributes="256" KeyPath="wpfgfx_cor3.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="D3DCompiler_47_cor3.dll.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="D3DCOM~1.DEP|D3DCompiler_47_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\D3DCompiler_47_cor3.dll.deploy" SelfReg="false"/>
+    <ROW File="EncryptDecrypt.dll.manifest" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="ENCRYP~1.MAN|EncryptDecrypt.dll.manifest" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\EncryptDecrypt.dll.manifest" SelfReg="false"/>
+    <ROW File="EncryptDecrypt.exe.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="ENCRYP~1.DEP|EncryptDecrypt.exe.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\EncryptDecrypt.exe.deploy" SelfReg="false"/>
+    <ROW File="Launcher.exe.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="LAUNCH~1.DEP|Launcher.exe.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\Launcher.exe.deploy" SelfReg="false"/>
+    <ROW File="PenImc_cor3.dll.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="PENIMC~1.DEP|PenImc_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\PenImc_cor3.dll.deploy" SelfReg="false"/>
+    <ROW File="PresentationNative_cor3.dll.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="PRESEN~1.DEP|PresentationNative_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\PresentationNative_cor3.dll.deploy" SelfReg="false"/>
+    <ROW File="vcruntime140_cor3.dll.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="VCRUNT~1.DEP|vcruntime140_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\vcruntime140_cor3.dll.deploy" SelfReg="false"/>
+    <ROW File="wpfgfx_cor3.dll.deploy" Component_="D3DCompiler_47_cor3.dll.deploy" FileName="WPFGFX~1.DEP|wpfgfx_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\wpfgfx_cor3.dll.deploy" SelfReg="false"/>
     <ROW File="D3DCompiler_47_cor3.dll" Component_="D3DCompiler_47_cor3.dll" FileName="D3DCOM~1.DLL|D3DCompiler_47_cor3.dll" Attributes="0" SourcePath="..\bin\publish\D3DCompiler_47_cor3.dll" SelfReg="false"/>
     <ROW File="EncryptDecrypt.application" Component_="EncryptDecrypt.application" FileName="ENCRYP~1.APP|EncryptDecrypt.application" Attributes="0" SourcePath="..\bin\publish\EncryptDecrypt.application" SelfReg="false"/>
     <ROW File="EncryptDecrypt.deps.json" Component_="EncryptDecrypt.application" FileName="ENCRYP~1.JSO|EncryptDecrypt.deps.json" Attributes="0" SourcePath="..\bin\publish\EncryptDecrypt.deps.json" SelfReg="false"/>
     <ROW File="EncryptDecrypt.exe" Component_="EncryptDecrypt.exe" FileName="ENCRYP~1.EXE|EncryptDecrypt.exe" Attributes="0" SourcePath="..\bin\publish\EncryptDecrypt.exe" SelfReg="false" DigSign="true"/>
     <ROW File="EncryptDecrypt.pdb" Component_="EncryptDecrypt.exe" FileName="ENCRYP~1.PDB|EncryptDecrypt.pdb" Attributes="0" SourcePath="..\bin\publish\EncryptDecrypt.pdb" SelfReg="false"/>
+    <ROW File="EncryptDecrypt.zip" Component_="EncryptDecrypt.application" FileName="ENCRYP~1.ZIP|EncryptDecrypt.zip" Attributes="0" SourcePath="..\bin\publish\EncryptDecrypt.zip" SelfReg="false"/>
     <ROW File="Launcher.exe" Component_="Launcher.exe" FileName="Launcher.exe" Attributes="0" SourcePath="..\bin\publish\Launcher.exe" SelfReg="false" DigSign="true"/>
     <ROW File="PenImc_cor3.dll" Component_="PenImc_cor3.dll" FileName="PENIMC~1.DLL|PenImc_cor3.dll" Attributes="0" SourcePath="..\bin\publish\PenImc_cor3.dll" SelfReg="false"/>
     <ROW File="PresentationNative_cor3.dll" Component_="PresentationNative_cor3.dll" FileName="PRESEN~1.DLL|PresentationNative_cor3.dll" Attributes="0" SourcePath="..\bin\publish\PresentationNative_cor3.dll" SelfReg="false"/>
     <ROW File="setup.exe" Component_="setup.exe" FileName="setup.exe" Attributes="0" SourcePath="..\bin\publish\setup.exe" SelfReg="false" DigSign="true"/>
     <ROW File="vcruntime140_cor3.dll" Component_="vcruntime140_cor3.dll" FileName="VCRUNT~1.DLL|vcruntime140_cor3.dll" Attributes="0" SourcePath="..\bin\publish\vcruntime140_cor3.dll" SelfReg="false"/>
     <ROW File="wpfgfx_cor3.dll" Component_="wpfgfx_cor3.dll" FileName="WPFGFX~1.DLL|wpfgfx_cor3.dll" Attributes="0" SourcePath="..\bin\publish\wpfgfx_cor3.dll" SelfReg="false"/>
-    <ROW File="D3DCompiler_47_cor3.dll.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="D3DCOM~1.DEP|D3DCompiler_47_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\D3DCompiler_47_cor3.dll.deploy" SelfReg="false"/>
-    <ROW File="EncryptDecrypt.dll.manifest_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="ENCRYP~1.MAN|EncryptDecrypt.dll.manifest" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\EncryptDecrypt.dll.manifest" SelfReg="false"/>
-    <ROW File="EncryptDecrypt.exe.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="ENCRYP~1.DEP|EncryptDecrypt.exe.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\EncryptDecrypt.exe.deploy" SelfReg="false"/>
-    <ROW File="Launcher.exe.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="LAUNCH~1.DEP|Launcher.exe.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\Launcher.exe.deploy" SelfReg="false"/>
-    <ROW File="PenImc_cor3.dll.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="PENIMC~1.DEP|PenImc_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\PenImc_cor3.dll.deploy" SelfReg="false"/>
-    <ROW File="PresentationNative_cor3.dll.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="PRESEN~1.DEP|PresentationNative_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\PresentationNative_cor3.dll.deploy" SelfReg="false"/>
-    <ROW File="vcruntime140_cor3.dll.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="VCRUNT~1.DEP|vcruntime140_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\vcruntime140_cor3.dll.deploy" SelfReg="false"/>
-    <ROW File="wpfgfx_cor3.dll.deploy_1" Component_="D3DCompiler_47_cor3.dll.deploy_1" FileName="WPFGFX~1.DEP|wpfgfx_cor3.dll.deploy" Attributes="0" SourcePath="..\bin\publish\Application Files\EncryptDecrypt_1_0_0_6\wpfgfx_cor3.dll.deploy" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -176,7 +177,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="D3DCompiler_47_cor3.dll.deploy"/>
     <ROW Feature_="MainFeature" Component_="D3DCompiler_47_cor3.dll"/>
     <ROW Feature_="MainFeature" Component_="EncryptDecrypt.application"/>
     <ROW Feature_="MainFeature" Component_="EncryptDecrypt.exe"/>
@@ -187,7 +188,7 @@
     <ROW Feature_="MainFeature" Component_="vcruntime140_cor3.dll"/>
     <ROW Feature_="MainFeature" Component_="wpfgfx_cor3.dll"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
-    <ROW Feature_="MainFeature" Component_="D3DCompiler_47_cor3.dll.deploy_1"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="lock.exe" SourcePath="lock.ico" Index="0"/>
@@ -254,8 +255,5 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
-    <ROW Directory_="APPDIR" SourcePath="..\bin\publish" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
   </COMPONENT>
 </DOCUMENT>
