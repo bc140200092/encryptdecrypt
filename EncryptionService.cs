@@ -17,14 +17,6 @@ namespace EncryptDecrypt
             return encryption.Encrypt(textToEncrypt, key);
         }
 
-        //public string DecryptString(string textToDecrypt)
-        //{
-        //    var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
-        //    AesSymmetricEncryption encryption = new AesSymmetricEncryption();
-        //    return encryption.Decrypt(textToDecrypt, key);
-        //}
-
-
 		public string EncryptString(string textToEncrypt, int expiryInMinutes)
         {
 			var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
@@ -261,18 +253,5 @@ namespace EncryptDecrypt
             }
         }
 
-		public string DeriveKey(string input, string salt)
-		{
-
-			int iterationCount = 100101; // Choose the number of iterations based on your security requirements
-			int keySizeInBytes = 32; // 32 bytes = 256 bits, adjust the size based on your needs
-
-			byte[] saltBytes = Encoding.UTF8.GetBytes(salt);
-			using (var deriveBytes = new Rfc2898DeriveBytes(input, saltBytes, iterationCount, HashAlgorithmName.SHA512))
-			{
-				byte[] keyBytes = deriveBytes.GetBytes(keySizeInBytes);
-				return Convert.ToBase64String(keyBytes);
-			}
-		}
 	}
 }
