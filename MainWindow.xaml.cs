@@ -51,7 +51,7 @@ namespace EncryptDecrypt
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var encryptionService = new EncryptionService();
-            this.Content.Text = encryptionService.EncryptString(this.Content.Text);
+            this.Content.Text = encryptionService.EncryptString(this.Content.Text, int.Parse(Expiry.Text));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -17,12 +17,43 @@ namespace EncryptDecrypt
             return encryption.Encrypt(textToEncrypt, key);
         }
 
-        public string DecryptString(string textToDecrypt)
+        //public string DecryptString(string textToDecrypt)
+        //{
+        //    var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
+        //    AesSymmetricEncryption encryption = new AesSymmetricEncryption();
+        //    return encryption.Decrypt(textToDecrypt, key);
+        //}
+
+
+		public string EncryptString(string textToEncrypt, int expiryInMinutes)
         {
-            var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
-            AesSymmetricEncryption encryption = new AesSymmetricEncryption();
-            return encryption.Decrypt(textToDecrypt, key);
-        }
+			var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
+			AesSymmetricEncryption encryption = new AesSymmetricEncryption();
+
+			string expiry = DateTimeOffset.UtcNow.AddMinutes(expiryInMinutes).ToString();
+
+			var encryptedExpiry = encryption.Encrypt(expiry, key);
+			var encryptedText = encryption.Encrypt(textToEncrypt, key);
+
+			return encryption.Encrypt(encryptedExpiry+"~"+encryptedText, key);
+		}
+
+		public string DecryptString(string textToDecrypt)
+        {
+			var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
+			AesSymmetricEncryption encryption = new AesSymmetricEncryption();
+
+			var tokens = encryption.Decrypt(textToDecrypt, key).Split("~");
+
+			var expiry = DateTimeOffset.Parse(encryption.Decrypt(tokens[0], key));
+			if(DateTime.UtcNow < expiry)
+            {
+				return encryption.Decrypt(tokens[1], key);
+			} else
+            {
+				return "Token Expired.";
+			}
+		}
 
         public interface IAes
         {
@@ -229,6 +260,19 @@ namespace EncryptDecrypt
                 }
             }
         }
-        
-    }
+
+		public string DeriveKey(string input, string salt)
+		{
+
+			int iterationCount = 100101; // Choose the number of iterations based on your security requirements
+			int keySizeInBytes = 32; // 32 bytes = 256 bits, adjust the size based on your needs
+
+			byte[] saltBytes = Encoding.UTF8.GetBytes(salt);
+			using (var deriveBytes = new Rfc2898DeriveBytes(input, saltBytes, iterationCount, HashAlgorithmName.SHA512))
+			{
+				byte[] keyBytes = deriveBytes.GetBytes(keySizeInBytes);
+				return Convert.ToBase64String(keyBytes);
+			}
+		}
+	}
 }
