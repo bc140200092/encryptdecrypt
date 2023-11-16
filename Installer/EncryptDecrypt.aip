@@ -14,10 +14,10 @@
     <ROW Property="ARPPRODUCTICON" Value="lock.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Encrypt Decrypt"/>
-    <ROW Property="ProductCode" Value="1033:{523FAF81-9D15-44FB-97AD-E8226F0247AF} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{87620499-D805-4BF8-B017-5647A7DDA415} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="EncryptDecrypt"/>
-    <ROW Property="ProductVersion" Value="4.0.0"/>
+    <ROW Property="ProductVersion" Value="5.0.0"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{4DD401F8-5267-448D-B288-18AF74AAFFCC}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
