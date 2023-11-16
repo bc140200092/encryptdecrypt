@@ -22,13 +22,20 @@ namespace EncryptDecrypt
 			var key = Environment.GetEnvironmentVariable(Constants.VAR_Key, EnvironmentVariableTarget.User);
 			AesSymmetricEncryption encryption = new AesSymmetricEncryption();
 
+			string timestamp = DateTimeOffset.UtcNow.ToString();
 			string expiry = DateTimeOffset.UtcNow.AddMinutes(expiryInMinutes).ToString();
 
-			var encryptedExpiry = encryption.Encrypt(expiry, key);
+			var encryptedExpiry = encryption.Encrypt($"{timestamp}|{expiry}" , key);
 			var encryptedText = encryption.Encrypt(textToEncrypt, key);
-
-			return encryption.Encrypt(encryptedExpiry+"~"+encryptedText, key);
-		}
+			if(expiryInMinutes < 0)
+			{
+                return encryptedText;
+            }
+            else
+			{
+                return encryption.Encrypt(encryptedExpiry + "~" + encryptedText, key);
+            }
+        }
 
 		public string DecryptString(string textToDecrypt)
         {
@@ -36,9 +43,13 @@ namespace EncryptDecrypt
 			AesSymmetricEncryption encryption = new AesSymmetricEncryption();
 
 			var tokens = encryption.Decrypt(textToDecrypt, key).Split("~");
+			if(tokens.Length == 1)
+			{
+                return tokens[0];
+            }
+			var timeTokens = encryption.Decrypt(tokens[0], key).Split("|");
 
-			var expiry = DateTimeOffset.Parse(encryption.Decrypt(tokens[0], key));
-			if(DateTime.UtcNow < expiry)
+			if(DateTimeOffset.UtcNow > DateTimeOffset.Parse(timeTokens[0]) && DateTimeOffset.UtcNow < DateTimeOffset.Parse(timeTokens[1]))
             {
 				return encryption.Decrypt(tokens[1], key);
 			} else
