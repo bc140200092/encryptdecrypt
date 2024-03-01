@@ -1,2 +1,2 @@
-# Simple Encrypt Decrypt APP for Offline Encryption 
+# Encrypt Decrypt Simple Offline Encryption APP written in dotnet (.NET)
 
